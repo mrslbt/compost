@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compost</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Compost</h1>
+      <p class="tagline">use it or let it go</p>
+    </header>
+
+    <div class="input-section">
+      <input
+        type="text"
+        id="link-input"
+        placeholder="Paste a link to save..."
+        autocomplete="off"
+      >
+      <button id="save-btn">+</button>
+    </div>
+
+    <div id="links-container">
+      <div id="links-list"></div>
+      <div id="empty-state" class="empty-state">
+        <p>Nothing decomposing yet.</p>
+        <p class="hint">Paste a link above to start.</p>
+      </div>
+    </div>
+
+    <footer>
+      <span id="link-count">0 links</span>
+      <span class="dot">·</span>
+      <span class="decay-note">links fade after 30 days</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

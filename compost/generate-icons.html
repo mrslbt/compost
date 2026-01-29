@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Compost Icons</title>
+  <style>
+    body {
+      font-family: -apple-system, sans-serif;
+      padding: 40px;
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    .icon-preview {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+    }
+    canvas {
+      border: 1px solid #333;
+      border-radius: 8px;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      color: #4a9c6d;
+    }
+    h1 { color: #4a9c6d; }
+    p { color: #888; margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <h1>🌱 Compost Icon Generator</h1>
+  <p>Right-click each icon and "Save image as..." to the icons folder.</p>
+
+  <div class="icon-preview">
+    <canvas id="icon16" width="16" height="16"></canvas>
+    <a download="icon16.png">icon16.png</a>
+  </div>
+
+  <div class="icon-preview">
+    <canvas id="icon48" width="48" height="48"></canvas>
+    <a download="icon48.png">icon48.png</a>
+  </div>
+
+  <div class="icon-preview">
+    <canvas id="icon128" width="128" height="128"></canvas>
+    <a download="icon128.png">icon128.png</a>
+  </div>
+
+  <script>
+    function drawIcon(ctx, size) {
+      const scale = size / 128;
+
+      // Background (transparent, but let's add a subtle bg for visibility)
+      ctx.clearRect(0, 0, size, size);
+
+      ctx.save();
+      ctx.scale(scale, scale);
+
+      // Pot body
+      ctx.beginPath();
+      ctx.moveTo(24, 50);
+      ctx.lineTo(32, 110);
+      ctx.quadraticCurveTo(32, 120, 64, 120);
+      ctx.quadraticCurveTo(96, 120, 96, 110);
+      ctx.lineTo(104, 50);
+      ctx.closePath();
+
+      const potGrad = ctx.createLinearGradient(0, 50, 0, 120);
+      potGrad.addColorStop(0, '#5d4037');
+      potGrad.addColorStop(1, '#3e2723');
+      ctx.fillStyle = potGrad;
+      ctx.fill();
+
+      // Pot rim
+      ctx.beginPath();
+      ctx.ellipse(64, 50, 44, 10, 0, 0, Math.PI * 2);
+      ctx.fillStyle = '#6d4c41';
+      ctx.fill();
+
+      // Soil
+      ctx.beginPath();
+      ctx.ellipse(64, 54, 36, 8, 0, 0, Math.PI * 2);
+      const soilGrad = ctx.createLinearGradient(0, 46, 0, 62);
+      soilGrad.addColorStop(0, '#4a3728');
+      soilGrad.addColorStop(1, '#2d1f14');
+      ctx.fillStyle = soilGrad;
+      ctx.fill();
+
+      // Stem
+      ctx.beginPath();
+      ctx.moveTo(64, 54);
+      ctx.quadraticCurveTo(64, 35, 64, 20);
+      ctx.strokeStyle = '#4a9c6d';
+      ctx.lineWidth = 5;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+
+      // Left leaf
+      ctx.beginPath();
+      ctx.moveTo(64, 35);
+      ctx.quadraticCurveTo(50, 22, 42, 32);
+      ctx.quadraticCurveTo(50, 45, 64, 38);
+      ctx.fillStyle = '#4a9c6d';
+      ctx.fill();
+
+      // Right leaf
+      ctx.beginPath();
+      ctx.moveTo(64, 25);
+      ctx.quadraticCurveTo(78, 12, 86, 22);
+      ctx.quadraticCurveTo(78, 35, 64, 28);
+      ctx.fillStyle = '#5ab87d';
+      ctx.fill();
+
+      ctx.restore();
+    }
+
+    // Generate all sizes
+    [16, 48, 128].forEach(size => {
+      const canvas = document.getElementById('icon' + size);
+      const ctx = canvas.getContext('2d');
+      drawIcon(ctx, size);
+
+      // Create download link
+      const link = canvas.nextElementSibling;
+      link.href = canvas.toDataURL('image/png');
+    });
+  </script>
+</body>
+</html>
