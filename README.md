@@ -2,7 +2,7 @@
 
 Save links. Use them or let them go. Links fade over 30 days and disappear — like compost returning to the earth.
 
-[Install from the Chrome Web Store](https://chromewebstore.google.com/detail/compost/TODO)
+[Install from the Chrome Web Store](https://github.com/mrslbt/compost)
 
 ## What is Compost?
 
@@ -44,7 +44,7 @@ Zero dependencies. Pure vanilla HTML, CSS, and JavaScript — no build step, no 
 
 ## Install
 
-From the [Chrome Web Store](https://chromewebstore.google.com/detail/compost/TODO) or load unpacked:
+From the [Chrome Web Store](https://github.com/mrslbt/compost) or load unpacked:
 
 ```bash
 git clone https://github.com/mrslbt/compost.git
