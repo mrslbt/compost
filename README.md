@@ -1,18 +1,18 @@
-# Compost — Bookmarks with an expiration date
+# Compost
 
-Save links. Use them or let them go. Links fade over 30 days and disappear — like compost returning to the earth.
+Bookmarks that fade and disappear after 30 days.
+
+Save links. Use them or let them go. If you didn't click it in 30 days, you didn't need it.
 
 [Install from the Chrome Web Store](https://github.com/mrslbt/compost)
 
 ## What is Compost?
 
-Compost is a Chrome extension for saving links that automatically expire. Every link you save visually decays over 30 days — fading in opacity until it disappears completely. Click a link to open it and it's removed instantly. The idea is simple: if you didn't use it in 30 days, you didn't need it.
+A Chrome extension for saving links that automatically expire. Every link you save visually decays over 30 days, fading in opacity until it disappears completely. Click a link to open it and it's removed instantly.
 
-## Why?
+Bookmarks pile up. You save something "for later," and later never comes. Compost flips the default: instead of links living forever, they decompose. The ones you actually use get opened and cleared. The ones you don't fade away on their own. No guilt, no cleanup, no bookmark graveyard.
 
-Bookmarks pile up. You save something "for later," and later never comes. Compost flips the default — instead of links living forever, they decompose. The ones you actually use get opened and cleared. The ones you don't fade away on their own. No guilt, no cleanup, no bookmark graveyard.
-
-## How It Works
+## How it works
 
 1. Click the Compost icon in your browser toolbar
 2. Paste a link (or it auto-fills from your clipboard)
@@ -23,19 +23,19 @@ Bookmarks pile up. You save something "for later," and later never comes. Compos
 
 ## Features
 
-- **Visual decay** — links fade from full opacity to near-invisible over 30 days
-- **Auto-paste** — opens with your clipboard URL ready to save
-- **Click to use** — opening a link automatically removes it from the list
-- **Title fetching** — pulls page titles via noembed for YouTube, Twitter, Vimeo, SoundCloud, and more
-- **URL fallback titles** — extracts readable titles from the URL path when no metadata is available
-- **Duplicate detection** — won't save the same link twice
-- **Manual delete** — hover to reveal the delete button if you want to remove a link early
-- **Local storage only** — all data stays in your browser via Chrome's storage API
-- **No tracking, no accounts** — see [Privacy Policy](PRIVACY.md)
+- **Visual decay** - links fade from full opacity to near-invisible over 30 days
+- **Auto-paste** - opens with your clipboard URL ready to save
+- **Click to use** - opening a link automatically removes it from the list
+- **Title fetching** - pulls page titles via noembed for YouTube, Twitter, Vimeo, SoundCloud, and more
+- **URL fallback titles** - extracts readable titles from the URL path when no metadata is available
+- **Duplicate detection** - won't save the same link twice
+- **Manual delete** - hover to reveal the delete button if you want to remove a link early
+- **Local storage only** - all data stays in your browser via Chrome's storage API
+- **No tracking, no accounts** - see [Privacy Policy](PRIVACY.md)
 
 ## Tech
 
-Zero dependencies. Pure vanilla HTML, CSS, and JavaScript — no build step, no framework.
+Zero dependencies. Pure vanilla HTML, CSS, and JavaScript. No build step, no framework.
 
 - Chrome Manifest V3
 - `chrome.storage.local` for persistence
